@@ -104,6 +104,16 @@ public class BasicOpMode_Linear extends LinearOpMode {
             // Send calculated power to wheels
             leftDrive.setPower(leftPower);
             rightDrive.setPower(rightPower);
+            
+            // left joystick - forward & backward
+
+            // right joystick - right & left
+
+            // A button - move motor for clasp
+
+            // X button - move servo for clasp
+
+            //(optional) carousel - B button
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
