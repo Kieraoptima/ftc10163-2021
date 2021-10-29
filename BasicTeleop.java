@@ -104,10 +104,10 @@ public class BasicOpMode_Linear extends LinearOpMode {
             // Send calculated power to wheels
             leftDrive.setPower(leftPower);
             rightDrive.setPower(rightPower);
-            
+
             // left joystick - forward & backward
 
-            // right joystick - right & left
+            // right joystick - right & left :)
 
             // A button - move motor for clasp
 
