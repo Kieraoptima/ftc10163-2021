@@ -1,4 +1,4 @@
-# FTC 10163 - FREIGHT FRENZY 2021-2022#
+# FTC 10163 - FREIGHT FRENZY 2021-2022 #
 
 ### If you want to try out this code at home or using your own computer, follow the steps below: ###
 1. Go to this link: https://github.com/FIRST-Tech-Challenge/FtcRobotController
