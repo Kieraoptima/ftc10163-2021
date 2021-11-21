@@ -98,6 +98,18 @@ public class AutoMoveAway extends LinearOpMode {
 
         // CODE HERE!!!
         // :DDD
+       
+
+        //parked completely in warehouse 
+
+        //freight completely on alliance shipping hub
+        //Have to make 4 codes for the different 4 starting positions, or find a way to get to warehouse from two different positions. 
+
+
+      
+
+
+
 
         //stop
         robot.FrightDrive.setPower(0);
