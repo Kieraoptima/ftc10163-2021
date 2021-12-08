@@ -78,6 +78,7 @@ public class BasicTeleop extends LinearOpMode {
             double leftPower;
             double rightPower;
 
+            /*
             // POV Mode uses left stick to go forward, and right stick to turn.
             // uses basic math to combine motions and is easier to drive straight.
             double drive = -gamepad1.left_stick_y;
@@ -89,14 +90,14 @@ public class BasicTeleop extends LinearOpMode {
             robot.BrightDrive.setPower(rightPower);
             robot.FleftDrive.setPower(leftPower);
             robot.FrightDrive.setPower(rightPower);
+            */
 
             // for mecanum wheels
-            /*
+
             robot.BleftDrive.setPower((gamepad1.left_stick_y +  gamepad1.left_stick_x - gamepad1.right_stick_x) * (-speedAdjust / 10));
             robot.BrightDrive.setPower((gamepad1.left_stick_y - gamepad1.left_stick_x + gamepad1.right_stick_x) * (-speedAdjust / 10));
             robot.FleftDrive.setPower((gamepad1.left_stick_y - gamepad1.left_stick_x - gamepad1.right_stick_x) * (-speedAdjust / 10));
             robot.FrightDrive.setPower((gamepad1.left_stick_y + gamepad1.left_stick_x + gamepad1.right_stick_x) * (-speedAdjust / 10));
-             */
 
             // A button - move motor for clasp
             if (gamepad1.a) {
@@ -112,7 +113,14 @@ public class BasicTeleop extends LinearOpMode {
                 robot.claw.setPosition(0);
             }
 
-            //(optional) carousel - B button
+            //right trigger for carasol postive power
+            if (gamepad1.right_trigger > 0.5){
+                robot.carousel.setPower(2);
+            } else if (gamepad1.left_trigger > 0.5){
+                robot.carousel.setPower(-2);
+            } else {
+                robot.carousel.setPower(0);
+            }
 
             // show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
