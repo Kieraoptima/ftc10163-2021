@@ -32,6 +32,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
+//import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
@@ -55,6 +56,7 @@ public class HardwareMap21
     public DcMotor  BleftDrive  = null;
     public DcMotor  FrightDrive = null;
     public DcMotor  BrightDrive = null;
+    public DcMotor  carousel = null;
 
     // servos
     public Servo clasp = null;
@@ -82,6 +84,7 @@ public class HardwareMap21
         BleftDrive  = hwMap.get(DcMotor.class, "BleftDrive");
         FrightDrive = hwMap.get(DcMotor.class, "FrightDrive");
         BrightDrive = hwMap.get(DcMotor.class, "BrightDrive");
+        carousel = hwMap.get(DcMotor.class, "carousel");
         clasp = hwMap.get(Servo.class, "clasp");
         claw = hwMap.get(Servo.class, "claw");
 
@@ -90,21 +93,24 @@ public class HardwareMap21
         BleftDrive.setPower(0);
         FrightDrive.setPower(0);
         BrightDrive.setPower(0);
+        carousel.setPower(0);
 
         // set mode (use encoder!)
         BleftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         FleftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BrightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         FrightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        carousel.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         // set direction
         BleftDrive.setDirection(DcMotor.Direction.FORWARD);
         FleftDrive.setDirection(DcMotor.Direction.FORWARD);
         BrightDrive.setDirection(DcMotor.Direction.REVERSE);
         FrightDrive.setDirection(DcMotor.Direction.REVERSE);
+        carousel.setDirection(DcMotor.Direction.REVERSE);
 
         // initialize all servos
-        clasp.setPosition(CLOSED_SERVO);
-        claw.setPosition(0.5);
+        clasp.setPosition(0);
+        claw.setPosition(0);
     }
 }
